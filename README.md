@@ -13,7 +13,7 @@ Market Support: AMS, PAR, NASDAQ
 - Linear regression as preliminary price prediction.
 - PoC: stock price 5 days onward.
 
-Final score: \[ \sigma = \sum\_{i=1}^{4} w_i s_i\],
+Final score: $$\sigma = \sum\_{i=1}^{4} w_i s_i$$,
 
 where $w$ stands for weight and $s$ stands for scores. There are 4 scores, i.e.
 
@@ -25,6 +25,7 @@ where $w$ stands for weight and $s$ stands for scores. There are 4 scores, i.e.
 ## Models
 
 Llama 3.1 8B
+
 Sentence Transformers: all-MiniLM-L6-v2
 
 ## RAG
