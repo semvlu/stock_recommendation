@@ -1,6 +1,7 @@
 from newsapi import NewsApiClient
 from dotenv import load_dotenv
 import os
+import re
 from datetime import datetime
 from newspaper import Article
 import time
@@ -22,6 +23,20 @@ def get_all_news(query):
 
 # Function to save articles to a JSON file and return file name
 def articles_dump(_q):
+    # Check dump directory for recent files, vaild: 24 hrs
+    now = int(time.time() * (10 ** 3))
+    cutoff = now - 24*3600*1000  # 24 hours in ms
+    pattern = re.compile(rf"^{re.escape(_q)}_(\d+)\.jsonl$")
+    recent_files = []
+
+    for fname in os.listdir("dump"):
+        match = pattern.match(fname)
+        if match:
+            timestamp = int(match.group(1))
+            if timestamp >= cutoff:
+                return "./dump/" + fname
+
+
     load_dotenv()
     news_api_key = os.getenv("NEWSAPI_KEY")
     global newsapi
@@ -75,6 +90,3 @@ def articles_dump(_q):
 
     print(f"Saved {len(results)} articles to {path}")
     return path
-
-
-# cache DB / proxy: avoid unnecessary API calls

@@ -128,11 +128,21 @@ with main:
     # ----------------------------
 
 
+
+    @st.cache_data(ttl="1d")
+    def cached_capm_wacc_score(capm, wacc):
+        return capm_wacc_score(capm, wacc)
+
+    @st.cache_data(ttl="1d")
+    def cached_get_financial_scores(symbol):
+        return get_financial_scores(symbol)
+
+
     if submit:
         capm = capm(dat)
         wacc = wacc(dat, capm)
-        capm_wacc_score = capm_wacc_score(capm, wacc)
-        financial_scores = get_financial_scores(symbol)
+        capm_wacc_score = cached_capm_wacc_score(capm, wacc)
+        financial_scores = cached_get_financial_scores(symbol)
         financial_scores.update({
             "capm_wacc": capm_wacc_score
         })
