@@ -13,7 +13,7 @@ Market Support: AMS, PAR, NASDAQ
 - Linear regression as preliminary price prediction.
 - PoC: stock price 5 days onward.
 
-Final score: \[ \sigma = \sum\_{i=1}^{4} w_i s_i\],
+Final score: $$\sigma = \sum\_{i=1}^{4} w_i s_i$$,
 
 where $w$ stands for weight and $s$ stands for scores. There are 4 scores, i.e.
 
@@ -25,6 +25,7 @@ where $w$ stands for weight and $s$ stands for scores. There are 4 scores, i.e.
 ## Models
 
 Llama 3.1 8B
+
 Sentence Transformers: all-MiniLM-L6-v2
 
 ## RAG
@@ -36,4 +37,8 @@ FAISS: IndexFlatL2
 Streamlit, yfinance, NewsAPI, Beautiful Soup, Altair, RegEx, NLTK
 
 Source:
-[snp500.csv](https://datahub.io/core/s-and-p-500-companies).
+[snp500.csv](https://datahub.io/core/s-and-p-500-companies)
+[Euronext_Equities_XAMS.csv](https://live.euronext.com/en/markets/amsterdam/equities/list)
+[Euronext_Equities_XPAR.csv](https://live.euronext.com/en/markets/paris/equities/list)
+
+![alttext](https://github.com/semvlu/stock_recommendation/blob/main/preview.png?raw=true)
