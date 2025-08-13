@@ -1,15 +1,15 @@
 # Stock Recommendation System
 
-This is a rule-based + LLM stock recommendation system
+A rule-based + LLM stock recommendation system
 
 Market Support: AMS, PAR, NASDAQ
 
 ## Methodology
 
-- CBOE Volatility Index (^VIX) for market volatility measurement, i.e. weight fot chaos score.
-- User custom chaos score
+- CBOE Volatility Index (^VIX) for market volatility measurement, i.e. weight for chaos score.
+- User custom chaos score.
 - Compare company EV/EBITDA, P/E, P/B ratios within the sector to obtain scores in finance.
-- News source filtering for high quality input, e.g. Bloomberg, Politico, Reuters, Financial Times, Investopedia.
+- News source filtering for high quality RAG input, e.g. Bloomberg, Politico, Reuters, Financial Times, Investopedia.
 - Linear regression as preliminary price prediction.
 - PoC: stock price 5 days onward.
 
