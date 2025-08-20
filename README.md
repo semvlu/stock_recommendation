@@ -1,6 +1,6 @@
-# Stock Recommendation System
+# Stock Investment Recommendation System
 
-A rule-based + LLM stock recommendation system
+A rule-based + LLM stock investment recommendation system
 
 Market Support: AMS, PAR, NASDAQ
 
